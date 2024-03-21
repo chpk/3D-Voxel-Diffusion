@@ -1,3 +1,6 @@
+'''
+code to convert an array of 1  channel (dim) images to voxel representation and then convert it to STL format
+'''
 from PIL import Image, ImageSequence
 import numpy as np
 import skimage.measure
@@ -29,7 +32,7 @@ def save_stl(verts, faces, filename):
 
 def main(input_gif_path, loop_num):
     input_gif_path = input_gif_path
-    output_stl_path = "C:/Users/chpre/OneDrive/Desktop/results_discussion/cond_guided_stls/"+"temp_output_"+str(loop_num)+".stl"
+    output_stl_path = "" # destination folder where you want to save your STL files
     output_depth = 64
     
     slices = load_gif_as_slices(input_gif_path)
@@ -39,5 +42,5 @@ def main(input_gif_path, loop_num):
 
 
 for k in range (1,58):
-    real_image_path = "D:/latest_guided_results/"+str(k)+".gif"
+    real_image_path = "" # input gif folder path
     main(real_image_path, k)
